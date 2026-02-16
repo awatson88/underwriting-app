@@ -136,7 +136,7 @@ export default function InflationCharts({ policyYear }: InflationChartsProps) {
                     <XAxis dataKey="year" />
                     <YAxis domain={[95, 160]} tickFormatter={(v) => `${v}`} />
                     <Tooltip
-                      formatter={(value: number) => [`${value.toFixed(1)}`, '']}
+                      formatter={(value) => [`${Number(value).toFixed(1)}`, '']}
                       labelFormatter={(label) => `Year: ${label}`}
                     />
                     <Legend />
@@ -177,13 +177,13 @@ export default function InflationCharts({ policyYear }: InflationChartsProps) {
                     <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `+${v}%`} />
                     <YAxis dataKey="shortName" type="category" width={80} tick={{ fontSize: 12 }} />
                     <Tooltip
-                      formatter={(value: number) => [`+${value.toFixed(1)}%`, 'Change']}
+                      formatter={(value) => [`+${Number(value).toFixed(1)}%`, 'Change']}
                     />
                     <Bar
                       dataKey="change"
                       fill="#f97316"
                       radius={[0, 4, 4, 0]}
-                      label={{ position: 'right', formatter: (v: number) => `+${v.toFixed(0)}%`, fontSize: 11 }}
+                      label={{ position: 'right', formatter: (v) => `+${Number(v).toFixed(0)}%`, fontSize: 11 }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -207,13 +207,13 @@ export default function InflationCharts({ policyYear }: InflationChartsProps) {
                     <XAxis type="number" domain={[0, 70]} tickFormatter={(v) => `+${v}%`} />
                     <YAxis dataKey="shortName" type="category" width={80} tick={{ fontSize: 12 }} />
                     <Tooltip
-                      formatter={(value: number) => [`+${value.toFixed(1)}%`, 'Change']}
+                      formatter={(value) => [`+${Number(value).toFixed(1)}%`, 'Change']}
                     />
                     <Bar
                       dataKey="change"
                       fill="#3b82f6"
                       radius={[0, 4, 4, 0]}
-                      label={{ position: 'right', formatter: (v: number) => `+${v.toFixed(0)}%`, fontSize: 11 }}
+                      label={{ position: 'right', formatter: (v) => `+${Number(v).toFixed(0)}%`, fontSize: 11 }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -245,7 +245,7 @@ export default function InflationCharts({ policyYear }: InflationChartsProps) {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
                 <YAxis tickFormatter={(v) => `${v}%`} />
-                <Tooltip formatter={(value: number) => [`${value.toFixed(1)}%`, '']} />
+                <Tooltip formatter={(value) => [`${Number(value).toFixed(1)}%`, '']} />
                 <Legend />
                 <Line
                   type="monotone"
